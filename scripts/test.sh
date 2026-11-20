@@ -16,4 +16,4 @@ grep -q 'not a readable JPEG' .build/invalid-result.txt
 printf 'PASS invalid JPEG rejected\n'
 plutil -lint 'dist/Paper PDF.app/Contents/Info.plist'
 codesign --verify --deep --strict 'dist/Paper PDF.app'
-xcrun lipo -verify_arch arm64 x86_64 "$binary"
+xcrun lipo "$binary" -verify_arch arm64 x86_64
